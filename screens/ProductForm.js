@@ -5,6 +5,7 @@ import styles from './ProductForm.styles';
 import t from 'tcomb-form-native';
 import Product, { productFormOptions } from '../model/Product';
 import ImagePicker from 'react-native-image-picker';
+import Carousel from 'react-native-snap-carousel';
 
 var imageOptions = {
   title: 'Selecteer product foto',
@@ -54,6 +55,8 @@ export default class ProductForm extends Component {
 
   render() {
     const Form = t.form.Form;
+    let sliderWidth = 200;
+    let itemWidth = 50;
 
     return (
       <View style={styles.outerContainer}>
@@ -64,9 +67,13 @@ export default class ProductForm extends Component {
           </TouchableHighlight>
 
           {this.state.productPhotos.length > 0 ?
-            (this.state.productPhotos.map((photo, index) =>
-              <Image key={index} style={{width: 50, height: 50}} source={photo} />
-            ))
+            (
+              <Carousel ref={(carousel => {this._carousel = carousel;})} sliderWidth={sliderWidth} itemWidth={itemWidth} >
+                {this.state.productPhotos.map((photo, index) =>
+                  <Image key={index} style={{width: 100, height: 100}} source={photo} />
+                )}
+              </Carousel>
+            )
             :
             (<Text style={styles.title}>Please upload a picture</Text>)
           }
