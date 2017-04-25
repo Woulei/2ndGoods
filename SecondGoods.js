@@ -4,19 +4,18 @@ import { View, Text } from 'react-native';
 import styles from './SecondGoods.styles';
 import TitleScreen from './screens/TitleScreen';
 import Header from './screens/Header';
-import RequestForm from './screens/RequestForm';
+import UserForm from './screens/UserForm';
 import ProductForm from './screens/ProductForm';
+import StorageForm from './screens/StorageForm';
 
 export default class SecondGoods extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Header />
-        <RequestForm />
+        <UserForm />
         <ProductForm />
-        <View style={styles.addProduct}>
-          <Text>{"Add product"}</Text>
-        </View>
+        <StorageForm />
       </View>
     );
   }
