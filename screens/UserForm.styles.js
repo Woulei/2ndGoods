@@ -2,7 +2,7 @@ import { Platform, StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    flex: 0.6,
+    flex: 1,
     backgroundColor: 'grey',
   },
 });

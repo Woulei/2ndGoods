@@ -2,20 +2,20 @@ import { Platform, StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    flex: 0.5, flexDirection: 'row',
+    flex: (Platform.OS === 'ios') ? 0.4 : 0.2, flexDirection: 'row',
   },
   logo: {
     fontSize: 20,
-    width: '80%',
+    flex: 0.8,
     backgroundColor: 'yellow',
     textAlign: 'center',
-    paddingTop: (Platform.OS === 'ios') ? 40 : 20,
+    paddingTop: (Platform.OS === 'ios') ? 40 : 10,
   },
   menu: {
     fontSize: 20,
-    width: '20%',
+    flex: 0.2,
     backgroundColor: 'skyblue',
     textAlign: 'center',
-    paddingTop: (Platform.OS === 'ios') ? 40 : 20,
+    paddingTop: (Platform.OS === 'ios') ? 40 : 10,
   },
 });
