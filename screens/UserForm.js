@@ -23,7 +23,7 @@ export default class UserForm extends Component {
     const Form = t.form.Form;
 
     return (
-      <View style={styles.container}>
+      <View style={styles.outerContainer}>
         <KeyboardAvoidingView
           behavior="padding"
           style={styles.container}

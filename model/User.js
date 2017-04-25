@@ -27,12 +27,11 @@ export const formOptions = {
     gender: {
       options: [
         {value: 'Male', text: 'Dhr.'},
-        {value: 'Female', text: 'Mevr.'}
+        {value: 'Female', text: 'Mevr.'},
       ],
-      nullOption: {value: '', text: 'Choose your gender'}
+      nullOption: {value: '', text: 'Choose your gender'},
     },
   },
-
 }
 
 export default User;
