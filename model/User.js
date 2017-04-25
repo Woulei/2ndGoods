@@ -1,13 +1,10 @@
 // See: https://github.com/gcanti/tcomb-form-native
 import t from 'tcomb-form-native';
 
-var Gender = t.enums({
-  M: 'Male',
-  F: 'Female',
-});
+var Gender = t.enums.of('Male Female');
 
 const User = t.struct({
-  gender : Gender,
+  gender: Gender,
   firstName: t.String,
   lastName: t.String,
   address: t.maybe(t.String),
@@ -26,8 +23,16 @@ export const formOptions = {
     },
     telephone: {
       keyboardType: 'phone-pad',
-    }
-  }
+    },
+    gender: {
+      options: [
+        {value: 'Male', text: 'Dhr.'},
+        {value: 'Female', text: 'Mevr.'}
+      ],
+      nullOption: {value: '', text: 'Choose your gender'}
+    },
+  },
+
 }
 
 export default User;

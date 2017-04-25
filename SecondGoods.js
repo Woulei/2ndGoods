@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, ScrollView, Text } from 'react-native';
 
 import styles from './SecondGoods.styles';
 import TitleScreen from './screens/TitleScreen';
@@ -13,9 +13,11 @@ export default class SecondGoods extends Component {
     return (
       <View style={styles.container}>
         <Header />
-        <UserForm />
-        <ProductForm />
-        <StorageForm />
+        <ScrollView>
+          <UserForm />
+          <ProductForm />
+          <StorageForm />
+        </ScrollView>
       </View>
     );
   }
