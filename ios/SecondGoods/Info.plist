@@ -52,5 +52,9 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Productfoto's toe te voegen</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Het maken van productfoto's</string>
 </dict>
 </plist>

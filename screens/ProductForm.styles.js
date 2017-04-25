@@ -25,4 +25,8 @@ export default StyleSheet.create({
     alignSelf: 'stretch',
     justifyContent: 'center'
   },
+  title: {
+    alignSelf: 'center',
+    marginBottom: 10,
+  }
 });
