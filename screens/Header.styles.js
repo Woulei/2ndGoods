@@ -6,18 +6,18 @@ export default StyleSheet.create({
   },
   logo: {
     fontSize: 20,
-    height: 50,
+    height: (Platform.OS === 'ios') ? 70 : 50,
     width: '80%',
     backgroundColor: 'yellow',
     textAlign: 'center',
-    paddingTop: 20,
+    paddingTop: (Platform.OS === 'ios') ? 40 : 20,
   },
   menu: {
     fontSize: 20,
-    height: 50,
+    height: (Platform.OS === 'ios') ? 70 : 50,
     width: '20%',
     backgroundColor: 'skyblue',
     textAlign: 'center',
-    paddingTop: 20,
+    paddingTop: (Platform.OS === 'ios') ? 40 : 20,
   },
 });
