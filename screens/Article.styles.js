@@ -10,6 +10,9 @@ export default StyleSheet.create({
     paddingHorizontal: 10,
     paddingTop: 20,
   },
+  text: {
+    color: '#646565',
+  },
   buttonText: {
     fontSize: 18,
     color: 'white',
@@ -31,5 +34,5 @@ export default StyleSheet.create({
   },
   sliderContainer: {
     marginBottom: 15,
-  }
+  },
 });

@@ -5,9 +5,11 @@ import Drawer from 'react-native-drawer'
 import styles from './SecondGoods.styles';
 import TitleScreen from './screens/TitleScreen';
 import Header from './screens/Header';
-import UserForm from './screens/UserForm';
-import ProductForm from './screens/ProductForm';
-import StorageForm from './screens/StorageForm';
+// import UserForm from './screens/UserForm';
+// import ProductForm from './screens/ProductForm';
+// import StorageForm from './screens/StorageForm';
+import Article from './screens/Article';
+
 
 export default class SecondGoods extends Component {
   closeControlPanel = () => {
@@ -22,10 +24,8 @@ export default class SecondGoods extends Component {
       <View style={styles.container}>
         <Header />
         <ScrollView>
-          <UserForm />
-          <ProductForm />
-          <StorageForm />
-        </ScrollView>        
+          <Article />
+        </ScrollView>
       </View>
     );
   }
