@@ -8,6 +8,7 @@ const Product = t.struct({
 
 export const productFormOptions = {
   auto: 'none',
+  legend: 'Artikel gegevens',
   fields: {
     name: {
       placeholder: 'Productnaam...'

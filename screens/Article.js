@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { View, Image, Text, TouchableHighlight, KeyboardAvoidingView } from 'react-native';
+import { View, Text, TouchableHighlight, KeyboardAvoidingView, Image } from 'react-native';
 
-import styles from './ProductForm.styles';
+import styles from './Article.styles';
 import t from 'tcomb-form-native';
-import Product, { productFormOptions } from '../model/Product';
+import Article, { formOptions } from '../forms/ArticleForm';
 import ImagePicker from 'react-native-image-picker';
 import Carousel from 'react-native-snap-carousel';
 
@@ -17,8 +17,7 @@ var imageOptions = {
 };
 
 
-
-export default class ProductForm extends Component {
+export default class UserForm extends Component {
   constructor(props) {
     super(props);
     this.state = {productPhotos: []};
@@ -26,6 +25,12 @@ export default class ProductForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  onSubmit() {
+    const { form } = this.refs;
+    const newArticle = form.getValue();
+    if (!newArticle) return;
+    console.log(newArticle);
+  }
 
   myPhotoFunc() {
     ImagePicker.showImagePicker(imageOptions, (response) => {
@@ -42,30 +47,23 @@ export default class ProductForm extends Component {
         this.setState({
           productPhotos: this.state.productPhotos.concat([ source ])
         })
+        console.log('productPhotos[0]: ', this.state.productPhotos[0]);
       }
     })
   }
 
-  onSubmit() {
-    const { form } = this.refs;
-    const newProduct = form.getValue();
-    if (!newProduct) return;
-    console.log(newProduct);
-  }
-
   render() {
     const Form = t.form.Form;
-    let sliderWidth = 200;
+    let sliderWidth = 300;
     let itemWidth = 50;
 
     return (
       <View style={styles.outerContainer}>
-        <KeyboardAvoidingView behavior="padding" style={styles.container} >
-          <Form ref="form" type={Product} options={productFormOptions} />
+        <KeyboardAvoidingView behavior="padding" style={styles.container}>
+          <Form ref="form" type={Article} options={formOptions} />
           <TouchableHighlight style={styles.button} onPress={this.myPhotoFunc.bind(this)} underlayColor="#99d9f4" >
             <Text style={styles.buttonText}>Voeg een foto toe</Text>
           </TouchableHighlight>
-
           {this.state.productPhotos.length > 0 ?
             (
               <Carousel ref={(carousel => {this._carousel = carousel;})}
@@ -89,8 +87,12 @@ export default class ProductForm extends Component {
             :
             (<Text style={styles.title}>Kies tenminste 1 foto</Text>)
           }
+          <TouchableHighlight style={styles.button} onPress={this.onSubmit} underlayColor='#99d9f4' >
+            <Text style={styles.buttonText}>Verzend aanvraag</Text>
+          </TouchableHighlight>
         </KeyboardAvoidingView>
       </View>
+
     );
   }
 }

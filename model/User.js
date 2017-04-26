@@ -16,6 +16,7 @@ const User = t.struct({
 
 export const formOptions = {
   auto: 'none',
+  legend: 'Persoonlijke gegevens',
   fields: {
     firstName:  { placeholder: "Voornaam.." },
     lastName:   { placeholder: "Achternaam.." },
