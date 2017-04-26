@@ -10,7 +10,6 @@ export default class Header extends Component {
       <View style={styles.container}>
 
         <Text style={styles.logo}>Gegevens</Text>
-
       </View>
     );
   }
