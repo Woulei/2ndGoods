@@ -69,7 +69,19 @@ export default class ProductForm extends Component {
 
           {this.state.productPhotos.length > 0 ?
             (
-              <Carousel ref={(carousel => {this._carousel = carousel;})} sliderWidth={sliderWidth} itemWidth={itemWidth} >
+              <Carousel ref={(carousel => {this._carousel = carousel;})}
+                sliderWidth={sliderWidth}
+                itemWidth={itemWidth}
+                firstItem={1}
+                inactiveSlideScale={0.94}
+                inactiveSlideOpacity={0.6}
+                enableMomentum={false}
+                containerCustomStyle={styles.slider}
+                contentContainerCustomStyle={styles.sliderContainer}
+                showsHorizontalScrollIndicator={false}
+                snapOnAndroid={true}
+                removeClippedSubviews={false}
+               >
                 {this.state.productPhotos.map((photo, index) =>
                   <Image key={index} style={{width: 100, height: 100}} source={photo} />
                 )}

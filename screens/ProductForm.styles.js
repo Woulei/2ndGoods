@@ -28,5 +28,8 @@ export default StyleSheet.create({
   title: {
     alignSelf: 'center',
     marginBottom: 10,
+  },
+  sliderContainer: {
+    marginBottom: 15,
   }
 });
