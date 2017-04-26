@@ -7,15 +7,9 @@ export default StyleSheet.create({
   logo: {
     fontSize: 20,
     flex: 0.8,
-    backgroundColor: 'yellow',
+    color: 'white',
+    backgroundColor: '#646565',
     textAlign: 'center',
-    paddingTop: (Platform.OS === 'ios') ? 30 : 5,
-  },
-  menu: {
-    fontSize: 20,
-    flex: 0.2,
-    backgroundColor: 'skyblue',
-    textAlign: 'center',
-    paddingTop: (Platform.OS === 'ios') ? 30 : 5,
+    paddingTop: (Platform.OS === 'ios') ? 25 : 15,
   },
 });
