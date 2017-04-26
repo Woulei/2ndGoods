@@ -15,14 +15,21 @@ const User = t.struct({
 });
 
 export const formOptions = {
-  auto: 'placeholders',
+  auto: 'none',
   fields: {
-    email: {
-      keyboardType: 'email-address', // change keyboard layout to email input
-      autoCapitalize: 'none', // start email addresses with lower-case
-    },
+    firstName:  { placeholder: "Voornaam.." },
+    lastName:   { placeholder: "Achternaam.." },
+    address:  { placeholder: "Straat + Huisnummer.." },
+    postcode:   { placeholder: "Postcode.." },
+    city:       { placeholder: "Plaats.." },
     telephone: {
       keyboardType: 'phone-pad',
+      placeholder: "Telefoon-nr.."
+    },
+    email: {
+      keyboardType: 'email-address',
+      autoCapitalize: 'none',
+      placeholder: "Email..",
     },
     gender: {
       options: [

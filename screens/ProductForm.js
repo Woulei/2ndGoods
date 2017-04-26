@@ -9,6 +9,7 @@ import Carousel from 'react-native-snap-carousel';
 
 var imageOptions = {
   title: 'Selecteer product foto',
+  mediaType: 'photo',
   storageOptions: {
     skipBackup: true,
     path: 'images'
@@ -75,12 +76,12 @@ export default class ProductForm extends Component {
               </Carousel>
             )
             :
-            (<Text style={styles.title}>Please upload a picture</Text>)
+            (<Text style={styles.title}>Kies tenminste 1 foto</Text>)
           }
 
 
           <TouchableHighlight style={styles.button} onPress={this.onSubmit} underlayColor='#99d9f4' >
-            <Text style={styles.buttonText}>Next step</Text>
+            <Text style={styles.buttonText}>Volgende stap</Text>
           </TouchableHighlight>
         </KeyboardAvoidingView>
       </View>

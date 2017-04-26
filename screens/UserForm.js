@@ -30,7 +30,7 @@ export default class UserForm extends Component {
         >
           <Form ref="form" type={User} options={formOptions} />
           <TouchableHighlight style={styles.button} onPress={this.onSubmit} underlayColor='#99d9f4' >
-            <Text style={styles.buttonText}>Next step</Text>
+            <Text style={styles.buttonText}>Volgende stap</Text>
           </TouchableHighlight>
         </KeyboardAvoidingView>
       </View>
