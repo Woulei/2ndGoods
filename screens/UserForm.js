@@ -23,14 +23,14 @@ export default class UserForm extends Component {
     const Form = t.form.Form;
 
     return (
-      <View style={styles.container}>
+      <View style={styles.outerContainer}>
         <KeyboardAvoidingView
           behavior="padding"
           style={styles.container}
         >
           <Form ref="form" type={User} options={formOptions} />
           <TouchableHighlight style={styles.button} onPress={this.onSubmit} underlayColor='#99d9f4' >
-            <Text style={styles.buttonText}>Next step</Text>
+            <Text style={styles.buttonText}>Volgende stap</Text>
           </TouchableHighlight>
         </KeyboardAvoidingView>
       </View>
