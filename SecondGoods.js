@@ -1,32 +1,42 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Text } from 'react-native';
-import Drawer from 'react-native-drawer'
+import { Router, Scene } from 'react-native-router-flux';
+
+import {
+  View,
+  ScrollView,
+  Text,
+  StyleSheet,
+  Platform,
+} from 'react-native';
 
 import styles from './SecondGoods.styles';
 import TitleScreen from './screens/TitleScreen';
 import Header from './screens/Header';
-// import UserForm from './screens/UserForm';
-// import ProductForm from './screens/ProductForm';
-// import StorageForm from './screens/StorageForm';
 import Article from './screens/Article';
 
+// pages:
+import HowDoesItWork from './screens/pages/HowDoesItWork';
+import Faq from './screens/pages/Faq';
+import Commission from './screens/pages/Commission';
+import Transportation from './screens/pages/Transportation';
+import Consignment from './screens/pages/Consignment';
+import Contact from './screens/pages/Contact';
 
-export default class SecondGoods extends Component {
-  closeControlPanel = () => {
-    this._drawer.close()
-  };
-  openControlPanel = () => {
-    this._drawer.open()
-  };
+export default class MyMainView extends Component {
 
-  render() {
+  render(){
     return (
-      <View style={styles.container}>
-        <Header />
-        <ScrollView>
-          <Article />
-        </ScrollView>
-      </View>
-    );
+      <Router>
+        <Scene key="root" tabs={true}>
+          <Scene key="Article" component={Article} title="Gegevens" initial={true} />
+          <Scene key="Faq" component={Faq} title="FAQ" />
+          <Scene key="HowDoesItWork" component={HowDoesItWork} title="Hoe werkt het?" />
+          <Scene key="Commission" component={Commission} title="Commissie" />
+          <Scene key="Transportation" component={Transportation} title="Transport & Opslag" />
+          <Scene key="Consignment" component={Consignment} title="Consignatie Overeenkomst" />
+          <Scene key="Contact" component={Contact} title="Contact" />
+        </Scene>
+      </Router>
+    )
   }
 }
