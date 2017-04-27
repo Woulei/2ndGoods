@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 import Drawer from 'react-native-drawer';
-import MyMainView from './MyMainView';
+import mySecondGoods from './SecondGoods';
 import MyControlPanel from './screens/ControlPanel';
 
 export class SecondGoods extends Component {
@@ -59,7 +59,7 @@ export class SecondGoods extends Component {
         content={controlPanel}
         side={this.state.rightSide ? 'right' : 'left'}
         >
-        <MyMainView
+        <mySecondGoods
           drawerType={this.state.drawerType}
           setParentState={this.setStateFrag.bind(this)}
           openDrawer={this.openDrawer.bind(this)}

@@ -7,7 +7,7 @@ import {
   Platform,
 } from 'react-native';
 
-import styles from './MyMainView.styles';
+import styles from './SecondGoods.styles';
 import TitleScreen from './screens/TitleScreen';
 import Header from './screens/Header';
 import Article from './screens/Article';
