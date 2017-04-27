@@ -106,4 +106,11 @@ module.exports = StyleSheet.create({
     marginLeft:20,
     alignSelf: 'center',
   },
+  buttonControlPanel: {
+    width:250,
+    backgroundColor: 'white',
+    padding: 15,
+
+    alignSelf: 'center',
+  },
 });
