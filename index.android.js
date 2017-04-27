@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 import Drawer from 'react-native-drawer';
-import mySecondGoods from './SecondGoods';
+import MySecondGoods from './SecondGoods';
 import MyControlPanel from './screens/ControlPanel';
 
 export class SecondGoods extends Component {
@@ -22,7 +22,7 @@ export class SecondGoods extends Component {
       openDrawerOffset:100,
       closedDrawerOffset:0,
       panOpenMask: .1,
-      panCloseMask: .9,
+      panCloseMask: .2,
       rightSide: true,
     };
   }
@@ -49,6 +49,7 @@ export class SecondGoods extends Component {
       <Drawer
         ref={c => this.drawer = c}
         type={this.state.drawerType}
+        tapToClose={true}
         animation={this.state.animation}
         openDrawerOffset={this.state.openDrawerOffset}
         closedDrawerOffset={this.state.closedDrawerOffset}
@@ -59,7 +60,7 @@ export class SecondGoods extends Component {
         content={controlPanel}
         side={this.state.rightSide ? 'right' : 'left'}
         >
-        <mySecondGoods
+        <MySecondGoods
           drawerType={this.state.drawerType}
           setParentState={this.setStateFrag.bind(this)}
           openDrawer={this.openDrawer.bind(this)}
