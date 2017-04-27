@@ -5,14 +5,21 @@ import {
   Text
 } from 'react-native';
 
+import styles from '../styles';
 import Button from './Button';
 
 export default class ControlPanel extends Component {
   render() {
     return (
-      <View>
+      <View style={styles.controlPanel}>
+        <Text style={styles.controlPanelWelcome}>
+          {'2ndGoods'}
+        </Text>
         <Button
-          text="Close Drawer"
+          onPress={() => {
+            this.props.closeDrawer();
+          }}
+          text="FAQ"
         />
       </View>
     )
