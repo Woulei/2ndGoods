@@ -7,11 +7,11 @@ import {
   Platform,
 } from 'react-native';
 
-import styles from './SecondGoods.styles';
+import styles from './MyMainView.styles';
 import TitleScreen from './screens/TitleScreen';
 import Header from './screens/Header';
 import Article from './screens/Article';
-import Button from './Button';
+import Button from './screens/Button';
 
 export default class MyMainView extends Component {
   setParentState(args){
@@ -28,8 +28,8 @@ export default class MyMainView extends Component {
             onPress={this.props.openDrawer}
             text="Open Drawer"
             />
+            <Article />
         </View>
-          <Article />
       </ScrollView>
 
 

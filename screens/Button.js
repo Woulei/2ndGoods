@@ -5,7 +5,7 @@ import {
   TouchableHighlight
 } from 'react-native';
 
-import styles from './styles';
+import styles from './Button.styles';
 export default class Button extends Component {
 
 

@@ -11,7 +11,7 @@ import {
 
 import Drawer from 'react-native-drawer';
 import MyMainView from './MyMainView';
-import MyControlPanel from './ControlPanel';
+import MyControlPanel from './screens/ControlPanel';
 
 export class SecondGoods extends Component {
 
