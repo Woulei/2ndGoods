@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Router, Scene } from 'react-native-router-flux';
+
 import {
   View,
   ScrollView,
@@ -12,28 +14,18 @@ import TitleScreen from './screens/TitleScreen';
 import Header from './screens/Header';
 import Article from './screens/Article';
 import Button from './screens/Button';
+import Faq from './screens/faq';
 
 export default class MyMainView extends Component {
-  setParentState(args){
-    this.props.setParentState(args)
-  }
 
   render(){
     return (
-      <ScrollView>
-      <Header />
-        <View>
-          <Button
-            style={styles.container}
-            onPress={this.props.openDrawer}
-            text="Open Drawer"
-            />
-            <Article />
-        </View>
-      </ScrollView>
-
-
-
+      <Router>
+          <Scene key="root">
+            <Scene key="article" component={Article} title="Gegevens" initial={true} />
+            <Scene key="faq" component={Faq} title="FAQ" />
+          </Scene>
+        </Router>
     )
   }
 }

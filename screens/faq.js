@@ -6,6 +6,19 @@ export default class FAQ extends Component {
     return (
       <View>
         <Text>faq</Text>
+        <Text>faq</Text>
+        <Text>faq</Text>
+        <Text>faq</Text>
+        <Text>faq</Text>
+        <Text>faq</Text>
+        <Text>faq</Text>
+        <Text>faq</Text>
+        <Text>faq</Text>
+        <Text>faq</Text>
+        <Text>faq</Text>
+        <Text>faq</Text>
+        <Text>faq</Text>
+        <Text>faq</Text>
       </View>
     );
   }

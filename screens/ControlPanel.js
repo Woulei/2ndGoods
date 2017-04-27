@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import {Actions} from 'react-native-router-flux'
+
 import {
   SwitchIOS,
   View,
-  Text
+  Text,
+  Button,
 } from 'react-native';
 
 import styles from '../styles';
-import Button from './Button';
 
 export default class ControlPanel extends Component {
   render() {
@@ -16,11 +18,8 @@ export default class ControlPanel extends Component {
           {'2ndGoods'}
         </Text>
         <Button
-          onPress={() => {
-            this.props.closeDrawer();
-          }}
-          text="FAQ"
-        />
+        title="Press Me"
+        onPress={Actions.faq}>'FAQ'</Button>
       </View>
     )
   }
