@@ -49,6 +49,7 @@ export class SecondGoods extends Component {
       <Drawer
         ref={c => this.drawer = c}
         type={this.state.drawerType}
+        tapToClose={true}
         animation={this.state.animation}
         openDrawerOffset={this.state.openDrawerOffset}
         closedDrawerOffset={this.state.closedDrawerOffset}
