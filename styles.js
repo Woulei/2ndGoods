@@ -95,6 +95,7 @@ module.exports = StyleSheet.create({
     marginBottom: 5,
   },
   button: {
+    flex:1,
     backgroundColor: 'white',
     padding: 15,
     borderColor: '#eeeeee',

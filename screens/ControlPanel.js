@@ -5,10 +5,12 @@ import {
   SwitchIOS,
   View,
   Text,
-  Button,
 } from 'react-native';
 
+import Button from './Button'
+
 import styles from '../styles';
+
 
 export default class ControlPanel extends Component {
   render() {
@@ -18,8 +20,41 @@ export default class ControlPanel extends Component {
           {'2ndGoods'}
         </Text>
         <Button
-        title="Press Me"
-        onPress={Actions.faq}>'FAQ'</Button>
+        style={styles.button}
+        text="Bied product aan"
+        onPress={Actions.Article}>'Bied product aan'</Button>
+        <Button
+        style={styles.button}
+        text="FAQ"
+        onPress={Actions.Faq}>'FAQ'</Button>
+        <Button
+        style={styles.button}
+        text="Hoe werkt het?"
+        onPress={Actions.HowDoesItWork}>'Hoe werkt het?'</Button>
+        <Button
+        style={styles.button}
+        text="Commissie"
+        onPress={Actions.Commission}>'Commissie'</Button>
+        <Button
+        style={styles.button}
+        text="Transport & Opslag"
+        onPress={Actions.Transportation}>'Transport & Opslag'</Button>
+        <Button
+        style={styles.button}
+        text="Consignatie"
+        onPress={Actions.Consignment}>'Consignatie'</Button>
+        <Button
+        style={styles.button}
+        text="Contact"
+        onPress={Actions.Contact}>'Contact'</Button>
+
+        <Button
+          onPress={() => {
+            this.props.closeDrawer();
+          }}
+          text="Sluit"
+        />
+
       </View>
     )
   }

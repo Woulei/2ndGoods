@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight, KeyboardAvoidingView, Image } from 'react-native';
+import { View, Text, TouchableHighlight, KeyboardAvoidingView, ScrollView, Image } from 'react-native';
 
 import styles from './Article.styles';
 import t from 'tcomb-form-native';
@@ -58,7 +58,7 @@ export default class UserForm extends Component {
     let itemWidth = 50;
 
     return (
-      <View style={styles.outerContainer}>
+      <ScrollView style={styles.outerContainer}>
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
           <Form ref="form" type={Article} options={formOptions} />
           <TouchableHighlight style={styles.button} onPress={this.myPhotoFunc.bind(this)} underlayColor="#99d9f4" >
@@ -91,7 +91,7 @@ export default class UserForm extends Component {
             <Text style={styles.buttonText}>Verzend aanvraag</Text>
           </TouchableHighlight>
         </KeyboardAvoidingView>
-      </View>
+      </ScrollView>
 
     );
   }

@@ -22,7 +22,7 @@ export class SecondGoods extends Component {
       openDrawerOffset:100,
       closedDrawerOffset:0,
       panOpenMask: .1,
-      panCloseMask: .9,
+      panCloseMask: .2,
       rightSide: true,
     };
   }
