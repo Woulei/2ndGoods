@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableHighlight, KeyboardAvoidingView, ScrollView, Image } from 'react-native';
+import {Actions} from 'react-native-router-flux';
 
 import styles from './Article.styles';
 import t from 'tcomb-form-native';
@@ -41,7 +42,12 @@ export default class UserForm extends Component {
       body: JSON.stringify(newArticle)
     })
     .then(ApiUtils.checkStatus)
-    .then(response => response.json())
+    .then(response => {
+      if (response.status === 201) {
+
+        Actions.RequestSuccess()
+      }
+    })
     .catch( e => { console.error(e);})
   }
 

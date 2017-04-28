@@ -41,7 +41,12 @@ export default class UserForm extends Component {
       body: JSON.stringify(newArticle)
     })
     .then(ApiUtils.checkStatus)
-    .then(response => response.json())
+    .then(response => {
+      if (response.status === 201) {
+
+        Actions.RequestSuccess()
+      }
+    })
     .catch( e => { console.error(e);})
   }
 
