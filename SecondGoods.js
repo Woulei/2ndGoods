@@ -21,6 +21,7 @@ import Commission from './screens/pages/Commission';
 import Transportation from './screens/pages/Transportation';
 import Consignment from './screens/pages/Consignment';
 import Contact from './screens/pages/Contact';
+import RequestSuccess from './screens/pages/RequestSuccess';
 
 export default class MyMainView extends Component {
 
@@ -28,13 +29,14 @@ export default class MyMainView extends Component {
     return (
       <Router>
         <Scene key="root" tabs={true}>
-          <Scene key="Article" component={Article} title="Gegevens" initial={true} />
+          <Scene key="Article" component={Article} title="Bied product aan" initial={true} />
           <Scene key="Faq" component={Faq} title="FAQ" />
           <Scene key="HowDoesItWork" component={HowDoesItWork} title="Hoe werkt het?" />
           <Scene key="Commission" component={Commission} title="Commissie" />
           <Scene key="Transportation" component={Transportation} title="Transport & Opslag" />
           <Scene key="Consignment" component={Consignment} title="Consignatie Overeenkomst" />
           <Scene key="Contact" component={Contact} title="Contact" />
+          <Scene key="RequestSuccess" component={RequestSuccess} title="Success" />
         </Scene>
       </Router>
     )
