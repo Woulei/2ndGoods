@@ -26,16 +26,16 @@ export default class ControlPanel extends Component {
           <Text>{'Bied product aan'}</Text>
         </TouchableHighlight>
         <TouchableHighlight style={styles.buttonControlPanel} underlayColor="#B5B5B5" onPress={() => {
+          Actions.HowDoesItWork()
+          this.props.closeDrawer()
+        }}>
+        <Text>{'Hoe werkt het?'}</Text>
+        </TouchableHighlight>
+        <TouchableHighlight style={styles.buttonControlPanel} underlayColor="#B5B5B5" onPress={() => {
             Actions.Faq()
             this.props.closeDrawer()
           }}>
           <Text>{'FAQ'}</Text>
-        </TouchableHighlight>
-        <TouchableHighlight style={styles.buttonControlPanel} underlayColor="#B5B5B5" onPress={() => {
-            Actions.HowDoesItWork()
-            this.props.closeDrawer()
-          }}>
-          <Text>{'Hoe werkt het?'}</Text>
         </TouchableHighlight>
         <TouchableHighlight style={styles.buttonControlPanel} underlayColor="#B5B5B5" onPress={() => {
             Actions.Commission()

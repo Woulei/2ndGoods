@@ -1,5 +1,10 @@
 import { Platform, StyleSheet } from 'react-native';
 
+
+// standaard wit en deze groen: #c2d44e
+// voor accenten grijs: #646565.
+
+
 export default StyleSheet.create({
   outerContainer: {
     flex: 1,
@@ -11,15 +16,31 @@ export default StyleSheet.create({
     paddingHorizontal: 10,
     paddingTop: 80,
   },
-  text: {
-    color: '#646565',
+  captionBox: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    padding: 10,
   },
-  buttonText: {
+  title: {
+    fontSize: 30,
+    textAlign: 'center',
+    margin: 10,
+  },
+  header: {
     fontSize: 18,
-    color: 'white',
-    alignSelf: 'center'
+    fontWeight: 'bold',
+    alignSelf: 'center',
+    paddingBottom: 20,
   },
-  button: {
+  headerLeft: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 20,
+  },
+  subheader: {
     height: 36,
     backgroundColor: '#c2d44e',
     borderColor: '#c2d44e',
@@ -29,12 +50,41 @@ export default StyleSheet.create({
     alignSelf: 'stretch',
     justifyContent: 'center'
   },
-  title: {
-    alignSelf: 'center',
-    marginBottom: 10,
-  },
-  sliderContainer: {
+  text: {
+    fontSize: 18,
+    paddingLeft: 20,
+    paddingRight: 20,
+    textAlign: 'left',
     marginBottom: 15,
+  },
+  textUnderline: {
+    fontSize: 18,
+    paddingLeft: 20,
+    paddingRight: 20,
+    textAlign: 'left',
+    marginBottom: 15,
+    textDecorationLine: "underline",
+    textDecorationStyle: "solid",
+    textDecorationColor: "#000",
+  },
+  textItalic: {
+    fontSize: 18,
+    fontStyle: 'italic',
+    paddingLeft: 20,
+    paddingRight: 20,
+    textAlign: 'left',
+    marginBottom: 15,
+  },
+  caption: {
+    fontSize: 12,
+    textAlign: 'center',
+    color: '#333333',
+    flex:1
+  },
+  captionIcon: {
+    textAlign: 'center',
+    color: '#c2d44e',
+    flex:1
   },
   logo: {
     height: 200,
