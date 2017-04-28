@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableHighlight, KeyboardAvoidingView, ScrollView, Image } from 'react-native';
+import {Actions} from 'react-native-router-flux';
 
 import styles from './Article.styles';
 import t from 'tcomb-form-native';
@@ -32,7 +33,7 @@ export default class UserForm extends Component {
     const newArticle = form.getValue();
     if (!newArticle) return;
     console.log('newArticle', JSON.stringify(newArticle));
-    fetch('http://10.134.204.3:3000/api/products', {
+    fetch('https://second-goods-admin.herokuapp.com/api/products', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
