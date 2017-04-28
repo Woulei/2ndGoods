@@ -12,7 +12,19 @@ export default class PageHowDoesItWork extends Component {
       >
       <View
       style={styles.container}>
-        <Text>{'Hoe werkt het?'}</Text>
+        <Text style={styles.title}>{'Verhuizing of herinrichting?'}</Text>
+        <Text style={styles.header}>{'Verkoop je meubels via 2nd Goods'}</Text>
+        <View style={styles.captionBox}>
+          <Text style={styles.caption}>{'Maak een foto van je meubels en upload ze via de app'}</Text>
+          <Text style={styles.caption}>{'We plannen een afspraak om langs te komen, foto’s te maken en evt de meubels mee te nemen'}</Text>
+          <Text style={styles.caption}>{'Ontspan, terwijl wij geld voor je verdienen!'}</Text>
+        </View>
+        <Text style={styles.header}>{'Maak een foto'}</Text>
+        <Text style={styles.text}>{'Maak een foto van de meubelstukken die je wilt verkopen en upload ze met wat basisinformatie via de app of website. Aan de hand van de foto en de informatie beoordelen we de verkoopprijs.'}</Text>
+        <Text style={styles.header}>{'Maak een afspraak'}</Text>
+        <Text style={styles.text}>{'Vervolgens nemen we contact op om het verdere verloop te bespreken. Er kan vervolgens een afspraak gemaakt worden voor het ophalen of afleven en eventueel professionele foto’s te maken.'}</Text>
+        <Text style={styles.header}>{'Ontvang je geld'}</Text>
+        <Text style={styles.text}>{'Via onze online kanalen zetten we de meubelstukken te koop. Je krijgt een bericht wanneer het meubelstuk verkocht is en binnen een week ontvang je het geld. Van alle rompslomp rondom de verkoop krijg je dus niks mee.'}</Text>
         </View>
       </ScrollView>
     );
