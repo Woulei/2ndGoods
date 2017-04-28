@@ -79,32 +79,6 @@ export default class UserForm extends Component {
       <ScrollView style={styles.outerContainer}>
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
           <Form ref="form" type={Article} options={formOptions} />
-          <TouchableHighlight style={styles.button} onPress={this.myPhotoFunc.bind(this)} underlayColor="#99d9f4" >
-            <Text style={styles.buttonText}>Voeg een foto toe</Text>
-          </TouchableHighlight>
-          {this.state.productPhotos.length > 0 ?
-            (
-              <Carousel ref={(carousel => {this._carousel = carousel;})}
-                sliderWidth={sliderWidth}
-                itemWidth={itemWidth}
-                firstItem={1}
-                inactiveSlideScale={0.94}
-                inactiveSlideOpacity={0.6}
-                enableMomentum={false}
-                containerCustomStyle={styles.slider}
-                contentContainerCustomStyle={styles.sliderContainer}
-                showsHorizontalScrollIndicator={false}
-                snapOnAndroid={true}
-                removeClippedSubviews={false}
-               >
-                {this.state.productPhotos.map((photo, index) =>
-                  <Image key={index} style={{width: 100, height: 100}} source={photo} />
-                )}
-              </Carousel>
-            )
-            :
-            (<Text style={styles.title}>Kies tenminste 1 foto</Text>)
-          }
           <TouchableHighlight style={styles.button} onPress={this.onSubmit} underlayColor='#99d9f4' >
             <Text style={styles.buttonText}>Verzend aanvraag</Text>
           </TouchableHighlight>
