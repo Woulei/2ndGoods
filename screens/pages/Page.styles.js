@@ -20,8 +20,7 @@ export default StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    padding:20,
-    paddingHorizontal: 10,
+    padding: 10,
   },
   title: {
     fontSize: 30,
@@ -74,7 +73,7 @@ export default StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     textAlign: 'left',
-    marginBottom: 15, 
+    marginBottom: 15,
   },
   caption: {
     fontSize: 12,
