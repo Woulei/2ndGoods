@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Text, TouchableHighlight, KeyboardAvoidingView, ScrollView, Image } from 'react-native';
 import {Actions} from 'react-native-router-flux';
+var ReadImageData  = require('NativeModules').ReadImageData;
 
 import styles from './Article.styles';
 import t from 'tcomb-form-native';
@@ -20,17 +21,25 @@ var imageOptions = {
 };
 
 
-export default class UserForm extends Component {
+export default class UserForm extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = {productPhotos: []};
+    this.state = {productPhotos: [], photosBase64: []};
 
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+
   onSubmit() {
     const { form } = this.refs;
     const newArticle = form.getValue();
+    this.state.productPhotos.forEach((photo) => {
+        console.log(photo.uri);
+        ReadImageData.readImage(photo.uri, (imageBase64) => {
+          console.log('hoi');
+        })
+    });
+
     if (!newArticle) return;
     console.log('newArticle', JSON.stringify(newArticle));
     fetch('http://localhost:3000/api/products', {
