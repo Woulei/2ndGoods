@@ -11,23 +11,18 @@ import styles from './Page.styles';
 export default class PageHowDoesItWork extends Component {
   render() {
     return (
-      <ScrollView
-      style={styles.outerContainer}
-      >
-      <View
-      style={styles.container}>
+      <ScrollView style={styles.outerContainer} >
+      <View style={styles.container}>
         <Text style={styles.title}>{'Verhuizing of herinrichting?'}</Text>
         <Text style={styles.header}>{'Verkoop je meubels via 2nd Goods'}</Text>
-
+          <View style={styles.captionBox}>
+            <Icon style={styles.captionIcon} name="camera-retro" size={50} />
+            <Icon style={styles.captionIcon} name="calendar" size={50} />
+            <Icon style={styles.captionIcon} name="money" size={50} />
+          </View>
         <View style={styles.captionBox}>
-        <Icon style={styles.captionIcon} name="camera-retro" size={50} />
-        <Icon style={styles.captionIcon} name="calendar" size={50} />
-        <Icon style={styles.captionIcon} name="money" size={50} />
-        </View>
-        <View style={styles.captionBox}>
-
           <Text style={styles.caption}>{'Maak een foto van je meubels en upload ze via de app'}</Text>
-          <Text style={styles.caption}>{'We plannen een afspraak'}</Text>
+          <Text style={styles.caption}>{'We plannen een afspraak om langs te komen'}</Text>
           <Text style={styles.caption}>{'Ontspan, terwijl wij geld voor je verdienen!'}</Text>
         </View>
         <Text style={styles.header}>{'Maak een foto'}</Text>

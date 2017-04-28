@@ -34,6 +34,13 @@ export default StyleSheet.create({
     alignSelf: 'center',
     paddingBottom: 20,
   },
+  headerLeft: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 20,
+  },
   subheader: {
     height: 36,
     backgroundColor: '#c2d44e',
@@ -50,6 +57,24 @@ export default StyleSheet.create({
     paddingRight: 20,
     textAlign: 'left',
     marginBottom: 15,
+  },
+  textUnderline: {
+    fontSize: 18,
+    paddingLeft: 20,
+    paddingRight: 20,
+    textAlign: 'left',
+    marginBottom: 15,
+    textDecorationLine: "underline",
+    textDecorationStyle: "solid",
+    textDecorationColor: "#000",
+  },
+  textItalic: {
+    fontSize: 18,
+    fontStyle: 'italic',
+    paddingLeft: 20,
+    paddingRight: 20,
+    textAlign: 'left',
+    marginBottom: 15, 
   },
   caption: {
     fontSize: 12,
