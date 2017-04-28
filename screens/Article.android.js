@@ -6,6 +6,8 @@ import t from 'tcomb-form-native';
 import Article, { formOptions } from '../forms/ArticleForm';
 import ImagePicker from 'react-native-image-picker';
 import Carousel from 'react-native-snap-carousel';
+import productApi from '../api/product';
+import ApiUtils from '../api/apiUtils';
 
 var imageOptions = {
   title: 'Selecteer product foto',
@@ -29,7 +31,18 @@ export default class UserForm extends Component {
     const { form } = this.refs;
     const newArticle = form.getValue();
     if (!newArticle) return;
-    console.log(newArticle);
+    console.log('newArticle', JSON.stringify(newArticle));
+    fetch('http://10.134.204.3:3000/api/products', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newArticle)
+    })
+    .then(ApiUtils.checkStatus)
+    .then(response => response.json())
+    .catch( e => { console.error(e);})
   }
 
   myPhotoFunc() {
