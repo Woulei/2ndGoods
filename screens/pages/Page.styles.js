@@ -22,7 +22,6 @@ export default StyleSheet.create({
     justifyContent: 'center',
     padding:20,
     paddingHorizontal: 10,
-    paddingTop: 80,
   },
   title: {
     fontSize: 30,
@@ -50,12 +49,18 @@ export default StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     textAlign: 'left',
-    marginBottom: 5,
+    marginBottom: 15,
   },
   caption: {
     fontSize: 12,
     textAlign: 'center',
     color: '#333333',
+    flex:1
+
+  },
+  captionIcon: {
+    textAlign: 'center',
+    color: '#c2d44e',
     flex:1
 
   },
