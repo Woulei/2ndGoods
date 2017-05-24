@@ -52,4 +52,15 @@ export const formOptions = {
   },
 }
 
+export const formValue = {
+  first_name: 'Wouter',
+  last_name: 'Leijdes',
+  address: 'Singel 542',
+  postcode: '1017AZ',
+  city: 'Amsterdam',
+  email: 'test@test.com',
+  product_name: 'something thing',
+  product_brand: 'An Brand'
+}
+
 export default Article;
