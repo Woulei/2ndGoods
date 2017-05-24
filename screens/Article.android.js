@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableHighlight, KeyboardAvoidingView, ScrollView, Image } from 'react-native';
+import { Actions } from 'react-native-router-flux';
+
 
 import styles from './Article.styles';
 import t from 'tcomb-form-native';
@@ -32,7 +34,7 @@ export default class UserForm extends Component {
     const newArticle = form.getValue();
     if (!newArticle) return;
     console.log('newArticle', JSON.stringify(newArticle));
-    fetch('http://10.134.204.3:3000/api/products', {
+    fetch('http://localhost:3000/api/products', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -43,9 +45,14 @@ export default class UserForm extends Component {
     .then(ApiUtils.checkStatus)
     .then(response => {
       if (response.status === 201) {
-
-        Actions.RequestSuccess()
+        return response.json();
       }
+    })
+    .then(json => {
+      console.log('JSON', json.product.id);
+      this.state.productId = json.product.id
+      console.log('state', this.state.productId);
+      Actions.RequestSuccess()
     })
     .catch( e => { console.error(e);})
   }
@@ -62,10 +69,10 @@ export default class UserForm extends Component {
       }
       else {
         let source = { uri: response.uri };
+        console.log(response);
         this.setState({
           productPhotos: this.state.productPhotos.concat([ source ])
         })
-        console.log('productPhotos[0]: ', this.state.productPhotos[0]);
       }
     })
   }

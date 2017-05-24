@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react';
 import { View, Text, TouchableHighlight, KeyboardAvoidingView, ScrollView, Image } from 'react-native';
-import {Actions} from 'react-native-router-flux';
+import { Actions } from 'react-native-router-flux';
 var ReadImageData  = require('NativeModules').ReadImageData;
 
 import styles from './Article.styles';
 import t from 'tcomb-form-native';
-import Article, { formOptions } from '../forms/ArticleForm';
+import Article, { formOptions, formValue } from '../forms/ArticleForm';
 import ImagePicker from 'react-native-image-picker';
 import Carousel from 'react-native-snap-carousel';
 import productApi from '../api/product';
@@ -24,7 +24,7 @@ var imageOptions = {
 export default class UserForm extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = {productPhotos: [], photosBase64: []};
+    this.state = {productPhotos: [], photosBase64: [], productId: 0};
 
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -33,12 +33,6 @@ export default class UserForm extends PureComponent {
   onSubmit() {
     const { form } = this.refs;
     const newArticle = form.getValue();
-    this.state.productPhotos.forEach((photo) => {
-        console.log(photo.uri);
-        ReadImageData.readImage(photo.uri, (imageBase64) => {
-          console.log('hoi');
-        })
-    });
 
     if (!newArticle) return;
     console.log('newArticle', JSON.stringify(newArticle));
@@ -53,9 +47,13 @@ export default class UserForm extends PureComponent {
     .then(ApiUtils.checkStatus)
     .then(response => {
       if (response.status === 201) {
-
-        Actions.RequestSuccess()
+        return response.json();
       }
+    })
+    .then(json => {
+      console.log('JSON', json.product);
+      product = { product: json.product }
+      Actions.RequestSuccess(product)
     })
     .catch( e => { console.error(e);})
   }
@@ -75,7 +73,7 @@ export default class UserForm extends PureComponent {
         this.setState({
           productPhotos: this.state.productPhotos.concat([ source ])
         })
-        console.log('productPhotos[0]: ', this.state.productPhotos[0]);
+        console.log('productPhotos[0].uri: ', this.state.productPhotos[0].uri);
       }
     })
   }
@@ -88,7 +86,7 @@ export default class UserForm extends PureComponent {
     return (
       <ScrollView style={styles.outerContainer}>
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
-          <Form ref="form" type={Article} options={formOptions} />
+          <Form ref="form" type={Article} options={formOptions} value={formValue} />
           <TouchableHighlight style={styles.button} onPress={this.myPhotoFunc.bind(this)} underlayColor="#99d9f4" >
             <Text style={styles.buttonText}>Voeg een foto toe</Text>
           </TouchableHighlight>
