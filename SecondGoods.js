@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 import { Router, Scene } from 'react-native-router-flux';
-
-import {
-  View,
-  ScrollView,
-  Text,
-  StyleSheet,
-  Platform,
-} from 'react-native';
+import { View, ScrollView, Text, StyleSheet, Platform } from 'react-native';
 
 import styles from './SecondGoods.styles';
 import TitleScreen from './screens/TitleScreen';
