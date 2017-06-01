@@ -56,9 +56,27 @@ react-native run-android
 
 ## Screenshots
 
+
+Submission form
+***
 ![simulator screen shot 1 jun 2017 09 58 02](https://cloud.githubusercontent.com/assets/22404695/26671281/207e8934-46b5-11e7-8c01-c114101d8ba9.png)
+
+***
+How does it work
+***
+
 ![simulator screen shot 1 jun 2017 09 58 11](https://cloud.githubusercontent.com/assets/22404695/26671283/207f7ce0-46b5-11e7-88e1-b6ad11d0bc4f.png)
+
+***
+FAQ
+***
+
 ![simulator screen shot 1 jun 2017 09 58 24](https://cloud.githubusercontent.com/assets/22404695/26671282/207f3974-46b5-11e7-8858-b0288edd53aa.png)
+
+***
+Menu
+***
+
 ![simulator screen shot 1 jun 2017 09 58 06](https://cloud.githubusercontent.com/assets/22404695/26671284/20829d80-46b5-11e7-8afc-e59d08aa28c2.png)
 
 ## Authors
